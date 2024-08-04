@@ -1,0 +1,28 @@
+import random 
+
+print("Sayı Tahmin Oyunu")
+print("")
+def sayıtahmini():
+    hak = 3 #Kullancıya tahmin hakkı için.
+    sayı = random.randint(1,9) #Random Sayı Üretebilmesi İçin:
+    print("1-9 Arasında  Bir Sayı Tuttum Tahmin Et.")
+
+    while hak > 0 :
+        tahmin = int(input("Tahminizi Giriniz.")) #Kullanıcıdan Değer
+        if (tahmin < sayı): #Eğer Random olan sayı Tahmin edilenden büyük ise.
+            print("Daha Yüksek Bir Sayı.")
+            hak -= 1 # Yanlış Tahmin olduğu için hakkı gitti
+
+        elif ( tahmin > sayı): # Random Olan sayı tahmin edilenden küçük olursa.
+            print("Daha Küçük  Bir Sayı.")
+            hak-=1
+        elif(tahmin == sayı) : #Tahmin edilirse.
+            print("Tebrikler. Tahmin Edildi.")
+            break
+        
+    if hak == 0: #Eğer Doğruyu bilemeden hakkı biterse.
+        print("Hakkınız Bitti. Sayı {} idi.".format(sayı))
+    
+    
+    
+sayıtahmini()
